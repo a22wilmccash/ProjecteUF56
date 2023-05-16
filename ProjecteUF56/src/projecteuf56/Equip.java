@@ -9,7 +9,12 @@ package projecteuf56;
  * @author Usuario
  */
 public class Equip {
-    String nom;
+    private String nom;
     private int numeroJugadors;
+
+    public Equip(String nom, int numeroJugadors) {
+        this.nom = nom;
+        this.numeroJugadors = numeroJugadors;
+    }
     
 }

@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Properties;
+import java.util.Scanner;
 import static projecteuf56.ConexioBBDD.BD_NAME;
 import static projecteuf56.ConexioBBDD.PORT;
 import static projecteuf56.ConexioBBDD.PWD;
@@ -21,8 +22,9 @@ import static projecteuf56.ConexioBBDD.USER;
  *
  * @author Celia
  */
-public class PrimeraTaula extends Taula {
+public class PrimeraTaula  {
     private  ArrayList <Jugador> numJug  = new ArrayList<>();
+    static Scanner scan = new Scanner (System.in);
 
    public ArrayList<Jugador> getNumJug() {
         return numJug;
