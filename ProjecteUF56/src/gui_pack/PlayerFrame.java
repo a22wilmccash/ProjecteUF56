@@ -29,15 +29,12 @@ public class PlayerFrame extends javax.swing.JFrame {
         updatePlayer = new javax.swing.JButton();
         nextPlayer = new javax.swing.JButton();
         prevPlayer = new javax.swing.JButton();
-        inputPlayerAge = new javax.swing.JTextField();
-        inputPlayerTeam = new javax.swing.JTextField();
         retiredTrue = new javax.swing.JCheckBox();
         retiredFalse = new javax.swing.JCheckBox();
         introName = new javax.swing.JLabel();
         introAge = new javax.swing.JLabel();
         introTeam = new javax.swing.JLabel();
         isRetired = new javax.swing.JLabel();
-        inputPlayerName = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -76,10 +73,6 @@ public class PlayerFrame extends javax.swing.JFrame {
             }
         });
 
-        inputPlayerAge.setText("...");
-
-        inputPlayerTeam.setText("...");
-
         retiredTrue.setText("Sí");
 
         retiredFalse.setText("No");
@@ -91,8 +84,6 @@ public class PlayerFrame extends javax.swing.JFrame {
         introTeam.setText("Equips integrats:");
 
         isRetired.setText("Està jubilat?");
-
-        inputPlayerName.setText("...");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -121,15 +112,10 @@ public class PlayerFrame extends javax.swing.JFrame {
                             .addComponent(isRetired)
                             .addComponent(introAge))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(inputPlayerAge, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inputPlayerName, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(retiredTrue)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(retiredFalse))
-                            .addComponent(inputPlayerTeam, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(47, 47, 47))))
+                        .addComponent(retiredTrue)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(retiredFalse)
+                        .addGap(112, 112, 112))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -139,47 +125,43 @@ public class PlayerFrame extends javax.swing.JFrame {
                     .addComponent(nextPlayer)
                     .addComponent(prevPlayer))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(introName)
-                    .addComponent(inputPlayerName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(introName)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(introAge)
-                    .addComponent(inputPlayerAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(introAge)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(isRetired)
                     .addComponent(retiredTrue)
                     .addComponent(retiredFalse))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(introTeam)
-                    .addComponent(inputPlayerTeam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(introTeam)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(moreDetails)
                     .addComponent(removePlayer)
                     .addComponent(updatePlayer))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void removePlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removePlayerActionPerformed
-        
+
     }//GEN-LAST:event_removePlayerActionPerformed
 
     private void moreDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moreDetailsActionPerformed
-        
+        MorePlayerFrame mpf = new MorePlayerFrame();
+        mpf.setVisible(true);
     }//GEN-LAST:event_moreDetailsActionPerformed
 
     private void updatePlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatePlayerActionPerformed
-
+        AddPlayerFrame apf = new AddPlayerFrame();
+        apf.setVisible(true);
     }//GEN-LAST:event_updatePlayerActionPerformed
 
     private void prevPlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prevPlayerActionPerformed
-       
+        
     }//GEN-LAST:event_prevPlayerActionPerformed
 
     private void nextPlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextPlayerActionPerformed
@@ -223,9 +205,6 @@ public class PlayerFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField inputPlayerAge;
-    private javax.swing.JTextField inputPlayerName;
-    private javax.swing.JTextField inputPlayerTeam;
     private javax.swing.JLabel introAge;
     private javax.swing.JLabel introName;
     private javax.swing.JLabel introTeam;

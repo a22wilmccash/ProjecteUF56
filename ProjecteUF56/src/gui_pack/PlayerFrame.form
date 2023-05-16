@@ -49,17 +49,10 @@
                           <Component id="introAge" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="inputPlayerAge" min="-2" pref="50" max="-2" attributes="0"/>
-                          <Component id="inputPlayerName" min="-2" pref="150" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="retiredTrue" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="retiredFalse" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="inputPlayerTeam" min="-2" pref="100" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                      <Component id="retiredTrue" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="retiredFalse" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -74,15 +67,9 @@
                   <Component id="prevPlayer" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="introName" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="inputPlayerName" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
+              <Component id="introName" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="introAge" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="inputPlayerAge" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
+              <Component id="introAge" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="isRetired" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -90,17 +77,14 @@
                   <Component id="retiredFalse" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="introTeam" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="inputPlayerTeam" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
+              <Component id="introTeam" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="moreDetails" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="removePlayer" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="updatePlayer" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="25" max="32767" attributes="0"/>
+              <EmptySpace pref="43" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -146,16 +130,6 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="prevPlayerActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputPlayerAge">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="..."/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="inputPlayerTeam">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="..."/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JCheckBox" name="retiredTrue">
       <Properties>
         <Property name="text" type="java.lang.String" value="S&#xed;"/>
@@ -184,11 +158,6 @@
     <Component class="javax.swing.JLabel" name="isRetired">
       <Properties>
         <Property name="text" type="java.lang.String" value="Est&#xe0; jubilat?"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="inputPlayerName">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="..."/>
       </Properties>
     </Component>
   </SubComponents>

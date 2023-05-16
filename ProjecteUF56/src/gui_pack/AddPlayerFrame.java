@@ -48,12 +48,6 @@ public class AddPlayerFrame extends javax.swing.JFrame {
 
         isRetired.setText("Està jubilat?");
 
-        inputPlayerName.setText("...");
-
-        inputPlayerAge.setText("...");
-
-        inputPlayerTeam.setText("...");
-
         addPlayerButton.setText("Acceptar");
         addPlayerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

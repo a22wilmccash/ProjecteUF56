@@ -102,19 +102,10 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="inputPlayerName">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="..."/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="inputPlayerAge">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="..."/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="inputPlayerTeam">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="..."/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="addPlayerButton">
       <Properties>

@@ -83,11 +83,13 @@ public class MainFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addPlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPlayerActionPerformed
-        
+        AddPlayerFrame apf = new AddPlayerFrame();
+        apf.setVisible(true);
     }//GEN-LAST:event_addPlayerActionPerformed
 
     private void viewPlayersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewPlayersActionPerformed
-
+        PlayerFrame pf = new PlayerFrame();
+        pf.setVisible(true);
     }//GEN-LAST:event_viewPlayersActionPerformed
 
     /**
