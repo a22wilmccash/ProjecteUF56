@@ -24,26 +24,34 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="addPlayer" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="removePlayer" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="updatePlayer" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="addPlayer" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                      <Component id="viewPlayers" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="75" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace pref="58" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="255" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="addPlayer" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="removePlayer" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="updatePlayer" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="viewPlayers" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="addPlayer" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+              <EmptySpace pref="64" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -51,17 +59,23 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="addPlayer">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Afegir Jugador"/>
+        <Property name="text" type="java.lang.String" value="Afegir Jugadors"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addPlayerActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="removePlayer">
+    <Component class="javax.swing.JButton" name="viewPlayers">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Borrar Jugador"/>
+        <Property name="text" type="java.lang.String" value="Mostrar Jugador"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="viewPlayersActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="updatePlayer">
+    <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Modificar Jugador"/>
+        <Property name="text" type="java.lang.String" value="Quina acci&#xf3; vols fer?"/>
       </Properties>
     </Component>
   </SubComponents>

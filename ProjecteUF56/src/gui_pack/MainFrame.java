@@ -4,6 +4,8 @@
  */
 package gui_pack;
 
+import projecteuf56.*;
+
 /**
  *
  * @author sonnymccammond
@@ -27,43 +29,66 @@ public class MainFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         addPlayer = new javax.swing.JButton();
-        removePlayer = new javax.swing.JButton();
-        updatePlayer = new javax.swing.JButton();
+        viewPlayers = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        addPlayer.setText("Afegir Jugador");
+        addPlayer.setText("Afegir Jugadors");
+        addPlayer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addPlayerActionPerformed(evt);
+            }
+        });
 
-        removePlayer.setText("Borrar Jugador");
+        viewPlayers.setText("Mostrar Jugador");
+        viewPlayers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewPlayersActionPerformed(evt);
+            }
+        });
 
-        updatePlayer.setText("Modificar Jugador");
+        jLabel1.setText("Quina acció vols fer?");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(addPlayer)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(removePlayer)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(updatePlayer)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(53, 53, 53)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(addPlayer)
+                        .addGap(32, 32, 32)
+                        .addComponent(viewPlayers))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(255, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(jLabel1)
+                .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addPlayer)
-                    .addComponent(removePlayer)
-                    .addComponent(updatePlayer))
-                .addGap(22, 22, 22))
+                    .addComponent(viewPlayers, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(addPlayer, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(64, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void addPlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPlayerActionPerformed
+        
+    }//GEN-LAST:event_addPlayerActionPerformed
+
+    private void viewPlayersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewPlayersActionPerformed
+
+    }//GEN-LAST:event_viewPlayersActionPerformed
 
     /**
      * @param args the command line arguments
@@ -102,7 +127,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addPlayer;
-    private javax.swing.JButton removePlayer;
-    private javax.swing.JButton updatePlayer;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton viewPlayers;
     // End of variables declaration//GEN-END:variables
 }

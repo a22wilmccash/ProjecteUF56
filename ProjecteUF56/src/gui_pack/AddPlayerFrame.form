@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
-  <NonVisualComponents>
-    <Component class="javax.swing.ButtonGroup" name="grupJubilat">
-    </Component>
-  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -27,38 +23,37 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+          <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="introName" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="introTeam" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="isRetired" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="introAge" alignment="0" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="inputPlayerName" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
-                  <Component id="inputPlayerAge" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="retiredTrue" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="retiredFalse" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="165" max="-2" attributes="0"/>
+                      <Component id="addPlayerButton" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="inputPlayerTeam" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="introName" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="introTeam" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="isRetired" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="introAge" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="inputPlayerName" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                          <Component id="inputPlayerAge" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
+                          <Component id="inputPlayerTeam" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                          <Component id="retiredTrue" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
               </Group>
-              <EmptySpace pref="29" max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="addPlayerButton" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
+              <EmptySpace pref="28" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace pref="29" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="introName" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="inputPlayerName" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -72,7 +67,6 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="isRetired" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="retiredTrue" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="retiredFalse" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -81,7 +75,7 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="addPlayerButton" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="12" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -122,25 +116,17 @@
         <Property name="text" type="java.lang.String" value="..."/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="retiredTrue">
-      <Properties>
-        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-          <ComponentRef name="grupJubilat"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="S&#xed;"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="retiredFalse">
-      <Properties>
-        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-          <ComponentRef name="grupJubilat"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="No"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JButton" name="addPlayerButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Acceptar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addPlayerButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="retiredTrue">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="S&#xed;"/>
       </Properties>
     </Component>
   </SubComponents>
