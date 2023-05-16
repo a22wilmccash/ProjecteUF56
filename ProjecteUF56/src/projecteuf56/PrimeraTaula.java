@@ -23,14 +23,15 @@ import static projecteuf56.ConexioBBDD.USER;
  * @author Celia
  */
 public class PrimeraTaula  {
-    private  ArrayList <Jugador> numJug  = new ArrayList<>();
+    private static  ArrayList <Jugador> numJug  = new ArrayList<>();
     static Scanner scan = new Scanner (System.in);
+    
 
    public ArrayList<Jugador> getNumJug() {
         return numJug;
     }
    
-   public void InserirRegistre(String nom, int edat, boolean estaRetirat, String equip){
+   public static void InserirRegistre(String nom, int edat, boolean estaRetirat, String equip){
         try{
             //part que no es cambia
             Properties props = new Properties();
@@ -71,7 +72,7 @@ public class PrimeraTaula  {
             
     } 
 
-   public void EliminarRegistre(String nom){
+   public static void EliminarRegistre(String nom){
          try{
             //part que no es cambia
             Properties props = new Properties();
@@ -106,7 +107,7 @@ public class PrimeraTaula  {
         }
     }
 
-   public void llistarRegistres(){
+   public static void llistarRegistres(){
         try{
             
             //part que no es cambia
@@ -117,7 +118,7 @@ public class PrimeraTaula  {
             c.setAutoCommit(false);
         
         Statement consulta = c.createStatement();
-        ResultSet resultat = consulta.executeQuery("Jugadors");
+        ResultSet resultat = consulta.executeQuery("Select * From Jugador");
         //aqui es decideix la taula que es vol mostrar
             
             while (resultat.next())
@@ -150,7 +151,7 @@ public class PrimeraTaula  {
 
     }
 
-   private boolean ComfirmarRegistre(){
+   private static boolean ComfirmarRegistre(){
      boolean resultat=false;
      //simple selector de booleans, feia pal implementar a cada accio de manera individual
         System.out.println("Estas segur de que vols realitzar aquesta operació?");
@@ -160,7 +161,7 @@ public class PrimeraTaula  {
      return resultat;
     }
 
-   public void EditarRegistre(String nom, int edat, boolean estaRetirat, String equip){
+   public static void EditarRegistre(String nom, int edat, boolean estaRetirat, String equip){
          try{
             //part que no es cambia
             Properties props = new Properties();

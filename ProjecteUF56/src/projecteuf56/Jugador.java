@@ -20,7 +20,4 @@ public class Jugador {
         this.estaRetirat = estaRetirat;
         this.equip = equip;
     }
-    
-    
-    
 }

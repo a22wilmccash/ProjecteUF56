@@ -9,7 +9,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.Properties;
 import static projecteuf56.ConexioBBDD.BD_NAME;
 import static projecteuf56.ConexioBBDD.PORT;
@@ -23,9 +22,8 @@ import static projecteuf56.ConexioBBDD.USER;
  */
 public class SegonaTaula  {
     
-    private  ArrayList <Equip> equips  = new ArrayList<>();
-
-    public void llistarEquips(){
+    public static DetallsJugador llistarDetalls(String nom){
+        DetallsJugador e = null;
         try{
             
             //part que no es cambia
@@ -35,19 +33,17 @@ public class SegonaTaula  {
             Connection c = DriverManager.getConnection("jdbc:mysql://"+URL+":"+PORT+"/"+BD_NAME, props);
             c.setAutoCommit(false);
         
-        Statement consulta = c.createStatement();
-        ResultSet resultat = consulta.executeQuery("Jugadors");
-        //aqui es decideix la taula que es vol mostrar
+            Statement consulta = c.createStatement();
+            ResultSet resultat = consulta.executeQuery("SELECT * FROM DetallsJugador Where nom="+nom);
+            //aqui es decideix la taula que es vol mostrar
             
-            while (resultat.next())
-            {
-                //bucle que mostra registres
-                
-                String nom= resultat.getString("Nom");
-                int numeroJugadors= resultat.getInt("NumJug");
-                Equip e= new Equip (nom, numeroJugadors);
-                equips.add(e);
-            }
+
+                //recullim els valors en un objecte
+                String posicio= resultat.getString("posicio");
+                int gols= resultat.getInt("gols");
+                int asistencies= resultat.getInt("asistencies");
+                 e  = new DetallsJugador (posicio, gols,asistencies );
+
             
             //Tancar resultat i consulta
             resultat.close();
@@ -63,8 +59,9 @@ public class SegonaTaula  {
             System.out.println();
             System.out.println("El getMessage es: " + se.getMessage());
         }
+        return e;
 
-
+       
     }
 
 }
