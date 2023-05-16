@@ -24,6 +24,7 @@ public class PlayerFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        opRetired = new javax.swing.ButtonGroup();
         moreDetails = new javax.swing.JButton();
         removePlayer = new javax.swing.JButton();
         updatePlayer = new javax.swing.JButton();
@@ -73,8 +74,10 @@ public class PlayerFrame extends javax.swing.JFrame {
             }
         });
 
+        opRetired.add(retiredTrue);
         retiredTrue.setText("Sí");
 
+        opRetired.add(retiredFalse);
         retiredFalse.setText("No");
 
         introName.setText("Nom del jugador:");
@@ -147,7 +150,7 @@ public class PlayerFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void removePlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removePlayerActionPerformed
-
+        
     }//GEN-LAST:event_removePlayerActionPerformed
 
     private void moreDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moreDetailsActionPerformed
@@ -211,6 +214,7 @@ public class PlayerFrame extends javax.swing.JFrame {
     private javax.swing.JLabel isRetired;
     private javax.swing.JButton moreDetails;
     private javax.swing.JButton nextPlayer;
+    private javax.swing.ButtonGroup opRetired;
     private javax.swing.JButton prevPlayer;
     private javax.swing.JButton removePlayer;
     private javax.swing.JCheckBox retiredFalse;
