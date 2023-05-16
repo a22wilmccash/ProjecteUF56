@@ -20,4 +20,23 @@ public class Jugador {
         this.estaRetirat = estaRetirat;
         this.equip = equip;
     }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public int getEdat() {
+        return edat;
+    }
+
+    public boolean isEstaRetirat() {
+        return estaRetirat;
+    }
+
+    public String getEquip() {
+        return equip;
+    }
+
+
+
 }
