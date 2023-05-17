@@ -33,6 +33,7 @@ public class PrimeraTaula  {
    
    public static void InserirRegistre(String nom, int edat, boolean estaRetirat, String equip){
         try{
+            ConexioBBDD.conectarse();
             //part que no es cambia
             Properties props = new Properties();
             props.setProperty("user", USER);
@@ -45,7 +46,7 @@ public class PrimeraTaula  {
             
                 nom="\""+nom+"\"";
                 equip="\""+equip+"\"";
-                String nouUsuari = "insert into Jugadors values ("+nom+","+edat+","+estaRetirat+","+equip+")";
+                String nouUsuari = "insert into Jugadors values ("+nom+","+edat  +","+estaRetirat+","+equip+")";
                 Statement st = c.createStatement();
                 st.executeUpdate(nouUsuari);
                 System.out.println("Inserció realitzada");
@@ -57,6 +58,7 @@ public class PrimeraTaula  {
                 else
                 {c.rollback();}
                 
+                System.out.println("Operacio Acabada");
                 
                 st.close();
                 c.close();

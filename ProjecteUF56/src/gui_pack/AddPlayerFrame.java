@@ -48,6 +48,12 @@ public class AddPlayerFrame extends javax.swing.JFrame {
 
         isRetired.setText("Està jubilat?");
 
+        inputPlayerName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputPlayerNameActionPerformed(evt);
+            }
+        });
+
         addPlayerButton.setText("Acceptar");
         addPlayerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -121,6 +127,10 @@ public class AddPlayerFrame extends javax.swing.JFrame {
         
         PrimeraTaula.InserirRegistre(nom, edat, jubilat, equip);
     }//GEN-LAST:event_addPlayerButtonActionPerformed
+
+    private void inputPlayerNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputPlayerNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputPlayerNameActionPerformed
 
     /**
      * @param args the command line arguments
