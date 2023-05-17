@@ -43,7 +43,8 @@ public class PrimeraTaula  {
             System.out.println();
 
             
-           
+                nom="\""+nom+"\"";
+                equip="\""+equip+"\"";
                 String nouUsuari = "insert into Jugadors values ("+nom+","+edat+","+estaRetirat+","+equip+")";
                 Statement st = c.createStatement();
                 st.executeUpdate(nouUsuari);
