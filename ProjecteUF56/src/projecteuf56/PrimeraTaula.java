@@ -86,7 +86,8 @@ public class PrimeraTaula  {
             System.out.println("Connexió realitzada correctament.");
             System.out.println();
             
-            //eliminem el registre accedint mitjançant el id
+            //eliminem el registre accedint mitjançant el nom
+            nom="\""+nom+"\"";
             String eliminar ="Delete From Jugadors Where nom ="+nom;
             Statement st = c.createStatement();
             st.executeUpdate(eliminar);
@@ -128,11 +129,11 @@ public class PrimeraTaula  {
             {
                 //bucle que mostra registres
                 
-                String nom= resultat.getString("Nom");
-                int edat= resultat.getInt("Edat");
-                boolean estaJubilat= resultat.getBoolean("EstaJubilat");
-                String equip= resultat.getString("Equip");
-                Jugador j= new Jugador (nom, edat, estaJubilat, equip);
+                String nom= resultat.getString("nom");
+                int edat= resultat.getInt("edat");
+                boolean estaRetirat= resultat.getBoolean("estaRetirat");
+                String equip= resultat.getString("equip");
+                Jugador j= new Jugador (nom, edat, estaRetirat, equip);
                 numJug.add(j);
             }
             
@@ -176,7 +177,8 @@ public class PrimeraTaula  {
             System.out.println();
 
             //aquesta part s'ha de cambiar al pensar la taula depenent dels valors
-           
+                nom="\""+nom+"\"";
+                equip="\""+equip+"\"";
                 String editarUsuari = "Update Jugadors Set nom="+nom+", edat="+edat+", estaJubilat="+estaRetirat+", equip="+equip+" Where nom="+nom;
                 Statement st = c.createStatement();
                 st.executeUpdate(editarUsuari);
