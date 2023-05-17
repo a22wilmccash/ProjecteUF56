@@ -14,11 +14,11 @@ import java.util.Properties;
  * @author Celia
  */
 public class ConexioBBDD {
-    static final String USER = "";
-    static final String PWD = "";
+    static final String USER = "a22celgariba_root";
+    static final String PWD = "R00Troot";
     static final String URL = "labs.inspedralbes.cat";
     static final String PORT = "3306";
-    static final String BD_NAME = "";
+    static final String BD_NAME = "a22celgariba_projecteUF56";
     
     
     public static void conectarse(){
