@@ -195,12 +195,21 @@ public class PlayerFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_updatePlayerActionPerformed
 
     private void prevPlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prevPlayerActionPerformed
-        indexPresentat--;
+        if (indexPresentat==0)
+            indexPresentat=numJug.size()-1;
+        else{
+            indexPresentat--;}
+        
         mostrarJugador();
     }//GEN-LAST:event_prevPlayerActionPerformed
 
     private void nextPlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextPlayerActionPerformed
-        indexPresentat++;
+        if (indexPresentat==numJug.size()-1)
+            indexPresentat=0;
+        
+        else{
+            indexPresentat++;}
+        
         mostrarJugador();
     }//GEN-LAST:event_nextPlayerActionPerformed
 

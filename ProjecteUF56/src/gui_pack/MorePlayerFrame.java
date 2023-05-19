@@ -21,7 +21,7 @@ public class MorePlayerFrame extends javax.swing.JFrame {
 
     int indexNom = PlayerFrame.indexPresentat;
     int indexDetalls = 0;
-
+    ArrayList<DetallsJugador> dj = SegonaTaula.llistarDetalls(numJug.get(indexNom).getNom());
     /**
      * Creates new form MorePlayerFrame
      */
@@ -124,18 +124,24 @@ public class MorePlayerFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void beforeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_beforeActionPerformed
-        indexDetalls--;
+        if (indexDetalls==0)
+            indexDetalls=dj.size()-1;
+        else{
+            indexDetalls--;}
         mostrarDetalls();
     }//GEN-LAST:event_beforeActionPerformed
 
     private void afterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afterActionPerformed
-        indexDetalls++;
+        if (indexDetalls==dj.size())
+            indexDetalls=0;
+        else{
+            indexDetalls++;}
         mostrarDetalls();
     }//GEN-LAST:event_afterActionPerformed
 
     public void mostrarDetalls() {
 
-        ArrayList<DetallsJugador> dj = SegonaTaula.llistarDetalls(numJug.get(indexNom).getNom());
+        
         String pos = dj.get(indexDetalls).getPosicio();
         int gol = dj.get(indexDetalls).getGols();
         int ass = dj.get(indexDetalls).getAssistencies();
