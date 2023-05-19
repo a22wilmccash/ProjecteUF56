@@ -9,7 +9,7 @@ import projecteuf56.*;
 
 public class PlayerFrame extends javax.swing.JFrame {
 
-    int indexPresentat = 0;
+   public static int indexPresentat = 0;
 
     public PlayerFrame() {
         initComponents();
