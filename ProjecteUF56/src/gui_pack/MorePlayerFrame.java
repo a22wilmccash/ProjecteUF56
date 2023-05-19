@@ -93,7 +93,7 @@ public class MorePlayerFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     public void mostrarDetalls() {
-      ArrayList <DetallsJugador> dj  = SegonaTaula.llistarDetalls(numJug.get(indexPresentat).getNom());
+      //ArrayList <DetallsJugador> dj  = SegonaTaula.llistarDetalls(numJug.get(indexPresentat).getNom());
       
     }
 

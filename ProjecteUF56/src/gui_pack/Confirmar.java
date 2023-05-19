@@ -17,9 +17,6 @@ public class Confirmar extends javax.swing.JFrame {
         initComponents();
     }
 
-    public static boolean isDecisio() {
-        return decisio;
-    }
     
     public static boolean decisio;
     /**
@@ -85,12 +82,12 @@ public class Confirmar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-         decisio=true;
+        boolean decisio=true;
          
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-         decisio=false;
+        boolean decisio=false;
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

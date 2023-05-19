@@ -13,6 +13,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Properties;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 import static projecteuf56.ConexioBBDD.BD_NAME;
 import static projecteuf56.ConexioBBDD.PORT;
 import static projecteuf56.ConexioBBDD.PWD;
@@ -157,10 +158,9 @@ public class PrimeraTaula  {
     }
 
    private static boolean ComfirmarRegistre(){
-     Confirmar comprobant = new Confirmar();
-     comprobant.setVisible(true);
-     boolean resultat=Confirmar.isDecisio();
-     comprobant.setVisible(false);
+       String missatge="Segur que vols confirmar els cambis?";
+       boolean resultat;
+       JOptionPane.showMessageDialog(null, missatge,"Confirmacio",JOptionPane.YES_NO_OPTION);
      return resultat;
     }
 
