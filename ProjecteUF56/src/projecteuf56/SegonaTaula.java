@@ -35,6 +35,7 @@ public class SegonaTaula  {
             c.setAutoCommit(false);
         
             Statement consulta = c.createStatement();
+            nom = "\"" + nom + "\"";
             ResultSet resultat = consulta.executeQuery("SELECT * FROM DetallsJugador Where nom="+nom);
             //aqui es decideix la taula que es vol mostrar
             
@@ -66,9 +67,6 @@ public class SegonaTaula  {
        
     }
 
-    public static ArrayList<DetallsJugador> getDj() {
-        return dj;
-    }
     
     
 

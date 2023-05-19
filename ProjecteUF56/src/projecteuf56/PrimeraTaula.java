@@ -4,7 +4,6 @@
  */
 package projecteuf56;
 
-import gui_pack.Confirmar;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -151,7 +150,10 @@ public class PrimeraTaula {
     private static boolean ComfirmarRegistre() {
         String missatge = "Segur que vols confirmar els cambis?";
         boolean resultat = false;
-        JOptionPane.showMessageDialog(null, missatge, "Confirmacio", JOptionPane.YES_NO_OPTION);
+        int opcio;
+        opcio=JOptionPane.showConfirmDialog(null, missatge, "Confirmacio", JOptionPane.YES_NO_OPTION);
+        if (opcio==0)
+            resultat=true;
         return resultat;
     }
 
@@ -173,8 +175,7 @@ public class PrimeraTaula {
             String editarUsuari = "Update Jugadors Set edat=" + edat + ", estaJubilat=" + estaRetirat + ", equip=" + equip + " Where nom=" + nom;
             Statement st = c.createStatement();
             st.executeUpdate(editarUsuari);
-            // System.out.println("Inserció realitzada");
-            // System.out.println("Segur que vols validar els canvis realitzats?");   
+ 
 
             //confirmar els cambis o rollback
             if (ComfirmarRegistre()) {
