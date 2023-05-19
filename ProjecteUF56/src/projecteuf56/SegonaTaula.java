@@ -65,6 +65,10 @@ public class SegonaTaula  {
 
        
     }
+
+    public static ArrayList<DetallsJugador> getDj() {
+        return dj;
+    }
     
     
 
