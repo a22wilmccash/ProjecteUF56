@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import projecteuf56.DetallsJugador;
 import projecteuf56.Jugadors;
 import projecteuf56.PrimeraTaula;
+import projecteuf56.SegonaTaula;
 
 /**
  *
@@ -91,7 +92,7 @@ public class MorePlayerFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     public void mostrarDetalls() {
-        ArrayList<DetallsJugador> dj = SegonaTaula.;
+      ArrayList <DetallsJugador> dj  = SegonaTaula.llistarDetalls("");
     }
 
     /**
