@@ -4,6 +4,7 @@
  */
 package gui_pack;
 
+import javax.swing.JLabel;
 import projecteuf56.*;
 
 /**
@@ -90,6 +91,12 @@ public class MainFrame extends javax.swing.JFrame {
     private void viewPlayersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewPlayersActionPerformed
         PlayerFrame pf = new PlayerFrame();
         pf.setVisible(true);
+        while(pf.isActive()){
+            for (int i = 0; i < PrimeraTaula.numJug.size(); i++) {
+                JLabel playerName = new JLabel();
+            }
+        }
+        
     }//GEN-LAST:event_viewPlayersActionPerformed
 
     /**

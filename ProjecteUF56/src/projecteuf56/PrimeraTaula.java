@@ -23,7 +23,7 @@ import static projecteuf56.ConexioBBDD.USER;
  * @author Celia
  */
 public class PrimeraTaula  {
-    private static  ArrayList <Jugador> numJug  = new ArrayList<>();
+    public static ArrayList <Jugador> numJug  = new ArrayList<>();
     static Scanner scan = new Scanner (System.in);
     
 

@@ -36,6 +36,9 @@ public class PlayerFrame extends javax.swing.JFrame {
         introAge = new javax.swing.JLabel();
         introTeam = new javax.swing.JLabel();
         isRetired = new javax.swing.JLabel();
+        playerName = new javax.swing.JLabel();
+        playerAge = new javax.swing.JLabel();
+        playerTeams = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -88,6 +91,12 @@ public class PlayerFrame extends javax.swing.JFrame {
 
         isRetired.setText("Està jubilat?");
 
+        playerName.setText("Nom");
+
+        playerAge.setText("Edat");
+
+        playerTeams.setText("Equips");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -115,9 +124,14 @@ public class PlayerFrame extends javax.swing.JFrame {
                             .addComponent(isRetired)
                             .addComponent(introAge))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(retiredTrue)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(retiredFalse)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(retiredTrue)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(retiredFalse))
+                            .addComponent(playerName)
+                            .addComponent(playerAge)
+                            .addComponent(playerTeams))
                         .addGap(112, 112, 112))))
         );
         layout.setVerticalGroup(
@@ -127,32 +141,40 @@ public class PlayerFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nextPlayer)
                     .addComponent(prevPlayer))
-                .addGap(18, 18, 18)
-                .addComponent(introName)
+                .addGap(24, 24, 24)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(introName)
+                    .addComponent(playerName))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(introAge)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(introAge)
+                    .addComponent(playerAge))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(isRetired)
                     .addComponent(retiredTrue)
                     .addComponent(retiredFalse))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(introTeam)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(introTeam)
+                    .addComponent(playerTeams))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(moreDetails)
                     .addComponent(removePlayer)
                     .addComponent(updatePlayer))
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void removePlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removePlayerActionPerformed
+        int i = 0;
+        PrimeraTaula.EliminarRegistre(PrimeraTaula.numJug.get(i).getNom());
         
     }//GEN-LAST:event_removePlayerActionPerformed
-
+    
     private void moreDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moreDetailsActionPerformed
         MorePlayerFrame mpf = new MorePlayerFrame();
         mpf.setVisible(true);
@@ -168,7 +190,7 @@ public class PlayerFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_prevPlayerActionPerformed
 
     private void nextPlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextPlayerActionPerformed
-        
+
     }//GEN-LAST:event_nextPlayerActionPerformed
 
     /**
@@ -215,6 +237,9 @@ public class PlayerFrame extends javax.swing.JFrame {
     private javax.swing.JButton moreDetails;
     private javax.swing.JButton nextPlayer;
     private javax.swing.ButtonGroup opRetired;
+    private javax.swing.JLabel playerAge;
+    private javax.swing.JLabel playerName;
+    private javax.swing.JLabel playerTeams;
     private javax.swing.JButton prevPlayer;
     private javax.swing.JButton removePlayer;
     private javax.swing.JCheckBox retiredFalse;
