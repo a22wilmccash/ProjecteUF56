@@ -4,6 +4,7 @@
  */
 package projecteuf56;
 
+import gui_pack.Confirmar;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -49,8 +50,7 @@ public class PrimeraTaula  {
                 String nouUsuari = "insert into Jugadors values ("+nom+","+edat  +","+estaRetirat+","+equip+")";
                 Statement st = c.createStatement();
                 st.executeUpdate(nouUsuari);
-                System.out.println("Inserció realitzada");
-                System.out.println("Segur que vols validar els canvis realitzats?");   
+                //System.out.println("Inserció realitzada");
                 
                 //confirmar els cambis o rollback
                 if (ComfirmarRegistre()) 
@@ -58,7 +58,7 @@ public class PrimeraTaula  {
                 else
                 {c.rollback();}
                 
-                System.out.println("Operacio Acabada");
+                //System.out.println("Operacio Acabada");
                 
                 st.close();
                 c.close();
@@ -157,12 +157,10 @@ public class PrimeraTaula  {
     }
 
    private static boolean ComfirmarRegistre(){
-     boolean resultat=false;
-     //simple selector de booleans, feia pal implementar a cada accio de manera individual
-        System.out.println("Estas segur de que vols realitzar aquesta operació?");
-        if (scan.next().equals("Si"))
-            resultat=true;
-        
+     Confirmar comprobant = new Confirmar();
+     comprobant.setVisible(true);
+     boolean resultat=Confirmar.isDecisio();
+     comprobant.setVisible(false);
      return resultat;
     }
 
@@ -184,8 +182,8 @@ public class PrimeraTaula  {
                 String editarUsuari = "Update Jugadors Set edat="+edat+", estaJubilat="+estaRetirat+", equip="+equip+" Where nom="+nom;
                 Statement st = c.createStatement();
                 st.executeUpdate(editarUsuari);
-                System.out.println("Inserció realitzada");
-                System.out.println("Segur que vols validar els canvis realitzats?");   
+               // System.out.println("Inserció realitzada");
+               // System.out.println("Segur que vols validar els canvis realitzats?");   
                 
                 //confirmar els cambis o rollback
                 if (ComfirmarRegistre()) 
