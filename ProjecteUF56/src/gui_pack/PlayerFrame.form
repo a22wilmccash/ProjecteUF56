@@ -57,7 +57,7 @@
                           <Component id="playerName" min="-2" max="-2" attributes="0"/>
                           <Component id="playerAge" min="-2" max="-2" attributes="0"/>
                           <Component id="playerTeams" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          <Component id="retired" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="155" max="-2" attributes="0"/>
                   </Group>
@@ -86,7 +86,7 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="isRetired" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="retired" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -180,7 +180,7 @@
         <Property name="text" type="java.lang.String" value="Equips"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="retired">
       <Properties>
         <Property name="text" type="java.lang.String" value="jubilat"/>
       </Properties>

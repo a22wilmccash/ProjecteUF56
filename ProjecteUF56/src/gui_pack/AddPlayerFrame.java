@@ -110,16 +110,22 @@ public class AddPlayerFrame extends javax.swing.JFrame {
 
     private void addPlayerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPlayerButtonActionPerformed
         String nom, equip;
-        int edat;
+        String edat;
         boolean jubilat;
-        
-        nom = inputPlayerName.getText();
-        equip = inputPlayerTeam.getText();
-        edat = Integer.parseInt(inputPlayerAge.getText());
-        jubilat = retiredTrue.isSelected();
+        int any;
         
         
-        PrimeraTaula.InserirRegistre(nom, edat, jubilat, equip);
+            nom = inputPlayerName.getText();
+            equip = inputPlayerTeam.getText();
+            edat = inputPlayerAge.getText();
+            jubilat = retiredTrue.isSelected();
+            try{
+                any = Integer.parseInt(edat);
+            }catch(NumberFormatException nfe){
+                any = 0;
+            }
+            PrimeraTaula.InserirRegistre(nom, any, jubilat, equip);
+        
     }//GEN-LAST:event_addPlayerButtonActionPerformed
 
     /**

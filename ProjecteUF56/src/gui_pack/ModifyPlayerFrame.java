@@ -101,16 +101,21 @@ public class ModifyPlayerFrame extends javax.swing.JFrame {
 
     private void addPlayerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPlayerButtonActionPerformed
         String nom, equip;
-        int edat;
+        String edat;
         boolean jubilat;
-        
+        int any;
         nom = PrimeraTaula.numJug.get(indexPresentat).getNom();
         equip = inputPlayerTeam.getText();
-        edat = Integer.parseInt(inputPlayerAge.getText());
+        edat = inputPlayerAge.getText();
+
         jubilat = retiredTrue.isSelected();
-        
-        
-        PrimeraTaula.EditarRegistre(nom, edat, jubilat, equip);
+
+        try {
+            any = Integer.parseInt(edat);
+        } catch (NumberFormatException nfe) {
+            any = 0;
+        }
+        PrimeraTaula.EditarRegistre(nom, any, jubilat, equip);
     }//GEN-LAST:event_addPlayerButtonActionPerformed
 
     /**
