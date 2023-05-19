@@ -31,8 +31,6 @@ public class PlayerFrame extends javax.swing.JFrame {
         updatePlayer = new javax.swing.JButton();
         nextPlayer = new javax.swing.JButton();
         prevPlayer = new javax.swing.JButton();
-        retiredTrue = new javax.swing.JCheckBox();
-        retiredFalse = new javax.swing.JCheckBox();
         introName = new javax.swing.JLabel();
         introAge = new javax.swing.JLabel();
         introTeam = new javax.swing.JLabel();
@@ -40,6 +38,7 @@ public class PlayerFrame extends javax.swing.JFrame {
         playerName = new javax.swing.JLabel();
         playerAge = new javax.swing.JLabel();
         playerTeams = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -78,12 +77,6 @@ public class PlayerFrame extends javax.swing.JFrame {
             }
         });
 
-        opRetired.add(retiredTrue);
-        retiredTrue.setText("Sí");
-
-        opRetired.add(retiredFalse);
-        retiredFalse.setText("No");
-
         introName.setText("Nom del jugador:");
 
         introAge.setText("Edat del jugador:");
@@ -97,6 +90,8 @@ public class PlayerFrame extends javax.swing.JFrame {
         playerAge.setText("Edat");
 
         playerTeams.setText("Equips");
+
+        jLabel1.setText("jubilat");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -126,14 +121,11 @@ public class PlayerFrame extends javax.swing.JFrame {
                             .addComponent(introAge))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(retiredTrue)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(retiredFalse))
                             .addComponent(playerName)
                             .addComponent(playerAge)
-                            .addComponent(playerTeams))
-                        .addGap(112, 112, 112))))
+                            .addComponent(playerTeams)
+                            .addComponent(jLabel1))
+                        .addGap(155, 155, 155))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,8 +145,7 @@ public class PlayerFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(isRetired)
-                    .addComponent(retiredTrue)
-                    .addComponent(retiredFalse))
+                    .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(introTeam)
@@ -164,7 +155,7 @@ public class PlayerFrame extends javax.swing.JFrame {
                     .addComponent(moreDetails)
                     .addComponent(removePlayer)
                     .addComponent(updatePlayer))
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         pack();
@@ -176,16 +167,11 @@ public class PlayerFrame extends javax.swing.JFrame {
         String nomJug = numJug.get(indexPresentat).getNom();
         int edat = numJug.get(indexPresentat).getEdat();
         boolean retired;
-        if (retiredTrue.isSelected()) {
-            retired = true;
-        } else {
-            retired = false;
-        }
+        
         String equips = numJug.get(indexPresentat).getEquip();
 
         playerName.setText(nomJug);
         playerAge.setText(edat + "");
-        isRetired.setText(retired + "");
         playerTeams.setText(equips);
 
     }
@@ -200,6 +186,7 @@ public class PlayerFrame extends javax.swing.JFrame {
         MorePlayerFrame mpf = new MorePlayerFrame();
         String nom = numJug.get(indexPresentat).getNom();
         SegonaTaula.llistarDetalls(nom);
+        mpf.mostrarDetalls();
         mpf.setVisible(true);
     }//GEN-LAST:event_moreDetailsActionPerformed
 
@@ -259,6 +246,7 @@ public class PlayerFrame extends javax.swing.JFrame {
     private javax.swing.JLabel introName;
     private javax.swing.JLabel introTeam;
     private javax.swing.JLabel isRetired;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JButton moreDetails;
     private javax.swing.JButton nextPlayer;
     private javax.swing.ButtonGroup opRetired;
@@ -267,8 +255,6 @@ public class PlayerFrame extends javax.swing.JFrame {
     private javax.swing.JLabel playerTeams;
     private javax.swing.JButton prevPlayer;
     private javax.swing.JButton removePlayer;
-    private javax.swing.JCheckBox retiredFalse;
-    private javax.swing.JCheckBox retiredTrue;
     private javax.swing.JButton updatePlayer;
     // End of variables declaration//GEN-END:variables
 }

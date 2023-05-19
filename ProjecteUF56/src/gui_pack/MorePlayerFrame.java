@@ -17,6 +17,8 @@ import projecteuf56.SegonaTaula;
  */
 public class MorePlayerFrame extends javax.swing.JFrame {
 
+   int indexDetalls = 0;
+
     /**
      * Creates new form MorePlayerFrame
      */
@@ -39,6 +41,8 @@ public class MorePlayerFrame extends javax.swing.JFrame {
         positionInput = new javax.swing.JLabel();
         goalInput = new javax.swing.JLabel();
         assistsInput = new javax.swing.JLabel();
+        after = new javax.swing.JButton();
+        before = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,12 +58,32 @@ public class MorePlayerFrame extends javax.swing.JFrame {
 
         assistsInput.setText("Assistencies");
 
+        after.setText("Més Detalls >");
+        after.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                afterActionPerformed(evt);
+            }
+        });
+
+        before.setText("< Detalls Previs");
+        before.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                beforeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
+                .addGap(16, 16, 16)
+                .addComponent(before)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addComponent(after)
+                .addGap(16, 16, 16))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(playerPosition)
                     .addComponent(playerGoals)
@@ -69,12 +93,16 @@ public class MorePlayerFrame extends javax.swing.JFrame {
                     .addComponent(assistsInput)
                     .addComponent(goalInput)
                     .addComponent(positionInput))
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addGap(57, 57, 57))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
+                .addGap(9, 9, 9)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(after)
+                    .addComponent(before))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(playerPosition)
                     .addComponent(positionInput))
@@ -86,19 +114,29 @@ public class MorePlayerFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(playerAssists)
                     .addComponent(assistsInput))
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void beforeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_beforeActionPerformed
+        indexDetalls--;
+        mostrarDetalls();
+    }//GEN-LAST:event_beforeActionPerformed
+
+    private void afterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afterActionPerformed
+        indexDetalls++;
+        mostrarDetalls();
+    }//GEN-LAST:event_afterActionPerformed
+
     public void mostrarDetalls() {
-        PlayerFrame pf = new PlayerFrame();
-        ArrayList<DetallsJugador> dj = SegonaTaula.llistarDetalls(numJug.get(pf.indexPresentat).getNom());
-        String pos = dj.get(pf.indexPresentat).getPosicio();
-        int gol = dj.get(pf.indexPresentat).getGols();
-        int ass = dj.get(pf.indexPresentat).getAsistencies();
-        
+
+        ArrayList<DetallsJugador> dj = SegonaTaula.llistarDetalls(numJug.get(indexDetalls).getNom());
+        String pos = dj.get(indexDetalls).getPosicio();
+        int gol = dj.get(indexDetalls).getGols();
+        int ass = dj.get(indexDetalls).getAsistencies();
+
         positionInput.setText(pos);
         goalInput.setText(gol + "");
         assistsInput.setText(ass + "");
@@ -140,7 +178,9 @@ public class MorePlayerFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton after;
     private javax.swing.JLabel assistsInput;
+    private javax.swing.JButton before;
     private javax.swing.JLabel goalInput;
     private javax.swing.JLabel playerAssists;
     private javax.swing.JLabel playerGoals;

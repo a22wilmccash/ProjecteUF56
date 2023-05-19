@@ -24,7 +24,14 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+              <Component id="before" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="42" max="32767" attributes="0"/>
+              <Component id="after" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="playerPosition" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="playerGoals" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -36,14 +43,19 @@
                   <Component id="goalInput" min="-2" max="-2" attributes="0"/>
                   <Component id="positionInput" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="38" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="after" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="before" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="playerPosition" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="positionInput" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -58,7 +70,7 @@
                   <Component id="playerAssists" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="assistsInput" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="35" max="32767" attributes="0"/>
+              <EmptySpace pref="23" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -93,6 +105,22 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Assistencies"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="after">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="M&#xe9;s Detalls &gt;"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="afterActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="before">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&lt; Detalls Previs"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="beforeActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
