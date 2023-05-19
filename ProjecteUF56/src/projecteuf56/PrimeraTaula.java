@@ -23,11 +23,11 @@ import static projecteuf56.ConexioBBDD.USER;
  * @author Celia
  */
 public class PrimeraTaula  {
-    public static ArrayList <Jugador> numJug  = new ArrayList<>();
+    public static ArrayList <Jugadors> numJug  = new ArrayList<>();
     static Scanner scan = new Scanner (System.in);
     
 
-   public static ArrayList<Jugador> getNumJug() {
+   public static ArrayList<Jugadors> getNumJug() {
         return numJug;
     }
    
@@ -77,6 +77,7 @@ public class PrimeraTaula  {
 
    public static void EliminarRegistre(String nom){
          try{
+             
             //part que no es cambia
             Properties props = new Properties();
             props.setProperty("user", USER);
@@ -113,7 +114,7 @@ public class PrimeraTaula  {
 
    public static void llistarRegistres(){
         try{
-            
+            ConexioBBDD.conectarse();
             //part que no es cambia
             Properties props = new Properties();
             props.setProperty("user", USER);
@@ -122,7 +123,7 @@ public class PrimeraTaula  {
             c.setAutoCommit(false);
         
         Statement consulta = c.createStatement();
-        ResultSet resultat = consulta.executeQuery("Select * From Jugador");
+        ResultSet resultat = consulta.executeQuery("Select * From Jugadors");
         //aqui es decideix la taula que es vol mostrar
             
             while (resultat.next())
@@ -133,7 +134,7 @@ public class PrimeraTaula  {
                 int edat= resultat.getInt("edat");
                 boolean estaRetirat= resultat.getBoolean("estaRetirat");
                 String equip= resultat.getString("equip");
-                Jugador j= new Jugador (nom, edat, estaRetirat, equip);
+                Jugadors j= new Jugadors (nom, edat, estaRetirat, equip);
                 numJug.add(j);
             }
             
@@ -167,6 +168,7 @@ public class PrimeraTaula  {
 
    public static void EditarRegistre(String nom, int edat, boolean estaRetirat, String equip){
          try{
+            ConexioBBDD.conectarse();
             //part que no es cambia
             Properties props = new Properties();
             props.setProperty("user", USER);
@@ -179,7 +181,7 @@ public class PrimeraTaula  {
             //aquesta part s'ha de cambiar al pensar la taula depenent dels valors
                 nom="\""+nom+"\"";
                 equip="\""+equip+"\"";
-                String editarUsuari = "Update Jugadors Set nom="+nom+", edat="+edat+", estaJubilat="+estaRetirat+", equip="+equip+" Where nom="+nom;
+                String editarUsuari = "Update Jugadors Set edat="+edat+", estaJubilat="+estaRetirat+", equip="+equip+" Where nom="+nom;
                 Statement st = c.createStatement();
                 st.executeUpdate(editarUsuari);
                 System.out.println("Inserció realitzada");

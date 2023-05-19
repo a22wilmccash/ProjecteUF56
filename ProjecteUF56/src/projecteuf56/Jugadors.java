@@ -8,13 +8,13 @@ package projecteuf56;
  *
  * @author Usuario
  */
-public class Jugador {
+public class Jugadors {
     private String nom;
     private int edat;
     private boolean estaRetirat;
     private String equip;
 
-    public Jugador(String nom, int edat, boolean estaRetirat, String equip) {
+    public Jugadors(String nom, int edat, boolean estaRetirat, String equip) {
         this.nom = nom;
         this.edat = edat;
         this.estaRetirat = estaRetirat;

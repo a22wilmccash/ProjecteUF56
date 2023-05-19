@@ -211,7 +211,7 @@ public class PlayerFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         PrimeraTaula.llistarRegistres();
-        ArrayList<Jugador> numJug = PrimeraTaula.getNumJug();
+        ArrayList<Jugadors> numJug = PrimeraTaula.getNumJug();
         String nomJug = numJug.get(0).getNom();
         playerName.setText(nomJug);
     }//GEN-LAST:event_jButton1ActionPerformed
