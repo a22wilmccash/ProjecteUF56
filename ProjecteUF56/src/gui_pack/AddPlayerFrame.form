@@ -102,14 +102,8 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="inputPlayerName">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputPlayerNameActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="inputPlayerAge">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputPlayerAgeActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="inputPlayerTeam">
     </Component>
