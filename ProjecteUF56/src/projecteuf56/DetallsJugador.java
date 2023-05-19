@@ -18,9 +18,17 @@ public class DetallsJugador {
         this.gols = gols;
         this.asistencies = asistencies;
     }
-    
-    
 
-    
-    
+    public String getPosicio() {
+        return posicio;
+    }
+
+    public int getGols() {
+        return gols;
+    }
+
+    public int getAsistencies() {
+        return asistencies;
+    }
+      
 }
