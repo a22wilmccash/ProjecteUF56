@@ -11,13 +11,16 @@ import projecteuf56.PrimeraTaula;
 import static projecteuf56.PrimeraTaula.numJug;
 import projecteuf56.SegonaTaula;
 
+//Cicla llista registres
+
 /**
  *
  * @author sonnymccammond
  */
 public class MorePlayerFrame extends javax.swing.JFrame {
 
-   int indexDetalls = 0;
+    int indexNom = PlayerFrame.indexPresentat;
+    int indexDetalls = 0;
 
     /**
      * Creates new form MorePlayerFrame
@@ -132,10 +135,10 @@ public class MorePlayerFrame extends javax.swing.JFrame {
 
     public void mostrarDetalls() {
 
-        ArrayList<DetallsJugador> dj = SegonaTaula.llistarDetalls(numJug.get(indexDetalls).getNom());
+        ArrayList<DetallsJugador> dj = SegonaTaula.llistarDetalls(numJug.get(indexNom).getNom());
         String pos = dj.get(indexDetalls).getPosicio();
         int gol = dj.get(indexDetalls).getGols();
-        int ass = dj.get(indexDetalls).getAsistencies();
+        int ass = dj.get(indexDetalls).getAssistencies();
 
         positionInput.setText(pos);
         goalInput.setText(gol + "");

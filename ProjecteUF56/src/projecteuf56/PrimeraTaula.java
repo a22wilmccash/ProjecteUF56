@@ -172,7 +172,7 @@ public class PrimeraTaula {
             //aquesta part s'ha de cambiar al pensar la taula depenent dels valors
             nom = "\"" + nom + "\"";
             equip = "\"" + equip + "\"";
-            String editarUsuari = "Update Jugadors Set edat=" + edat + ", estaJubilat=" + estaRetirat + ", equip=" + equip + " Where nom=" + nom;
+            String editarUsuari = "Update Jugadors Set edat=" + edat + ", estaRetirat=" + estaRetirat + ", equip=" + equip + " Where nom=" + nom;
             Statement st = c.createStatement();
             st.executeUpdate(editarUsuari);
  

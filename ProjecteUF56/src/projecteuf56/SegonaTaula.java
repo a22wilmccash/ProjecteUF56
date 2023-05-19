@@ -39,14 +39,15 @@ public class SegonaTaula  {
             ResultSet resultat = consulta.executeQuery("SELECT * FROM DetallsJugador Where nom="+nom);
             //aqui es decideix la taula que es vol mostrar
             
+            while (resultat.next()) {
 
                 //recullim els valors en un objecte
                 String posicio= resultat.getString("posicio");
                 int gols= resultat.getInt("gols");
-                int asistencies= resultat.getInt("asistencies");
-                 DetallsJugador e  = new DetallsJugador (posicio, gols,asistencies );
+                int assistencies= resultat.getInt("assistencies");
+                 DetallsJugador e  = new DetallsJugador (posicio, gols,assistencies );
                  dj.add(e);
-
+            }
             
             //Tancar resultat i consulta
             resultat.close();

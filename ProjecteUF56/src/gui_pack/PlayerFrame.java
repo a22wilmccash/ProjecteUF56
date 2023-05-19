@@ -10,7 +10,7 @@ import static projecteuf56.PrimeraTaula.numJug;
 
 public class PlayerFrame extends javax.swing.JFrame {
 
-    int indexPresentat = 0;
+    static int indexPresentat = 0;
 
     public PlayerFrame() {
         initComponents();
@@ -177,8 +177,7 @@ public class PlayerFrame extends javax.swing.JFrame {
     }
 
     private void removePlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removePlayerActionPerformed
-        int i = 0;
-        PrimeraTaula.EliminarRegistre(PrimeraTaula.numJug.get(i).getNom());
+        PrimeraTaula.EliminarRegistre(PrimeraTaula.numJug.get(indexPresentat).getNom());
 
     }//GEN-LAST:event_removePlayerActionPerformed
 
@@ -191,8 +190,8 @@ public class PlayerFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_moreDetailsActionPerformed
 
     private void updatePlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatePlayerActionPerformed
-        AddPlayerFrame apf = new AddPlayerFrame();
-        apf.setVisible(true);
+        ModifyPlayerFrame mpf = new ModifyPlayerFrame();
+        mpf.setVisible(true);
     }//GEN-LAST:event_updatePlayerActionPerformed
 
     private void prevPlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prevPlayerActionPerformed

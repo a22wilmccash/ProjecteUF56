@@ -11,12 +11,12 @@ package projecteuf56;
 public class DetallsJugador {
     private String posicio;
     private int gols;
-    private int asistencies;
+    private int assistencies;
 
-    public DetallsJugador(String posicio, int gols, int asistencies) {
+    public DetallsJugador(String posicio, int gols, int assistencies) {
         this.posicio = posicio;
         this.gols = gols;
-        this.asistencies = asistencies;
+        this.assistencies = assistencies;
     }
 
     public String getPosicio() {
@@ -27,8 +27,8 @@ public class DetallsJugador {
         return gols;
     }
 
-    public int getAsistencies() {
-        return asistencies;
+    public int getAssistencies() {
+        return assistencies;
     }
       
 }
