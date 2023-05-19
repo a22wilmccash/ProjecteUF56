@@ -9,6 +9,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.Properties;
 import static projecteuf56.ConexioBBDD.BD_NAME;
 import static projecteuf56.ConexioBBDD.PORT;
@@ -21,9 +22,9 @@ import static projecteuf56.ConexioBBDD.USER;
  * @author Celia
  */
 public class SegonaTaula  {
-    
-    public static DetallsJugador llistarDetalls(String nom){
-        DetallsJugador e = null;
+     public static ArrayList <DetallsJugador> dj  = new ArrayList<>();
+    public static ArrayList<DetallsJugador> llistarDetalls(String nom){
+       
         try{
             
             //part que no es cambia
@@ -42,7 +43,8 @@ public class SegonaTaula  {
                 String posicio= resultat.getString("posicio");
                 int gols= resultat.getInt("gols");
                 int asistencies= resultat.getInt("asistencies");
-                 e  = new DetallsJugador (posicio, gols,asistencies );
+                 DetallsJugador e  = new DetallsJugador (posicio, gols,asistencies );
+                 dj.add(e);
 
             
             //Tancar resultat i consulta
@@ -59,7 +61,7 @@ public class SegonaTaula  {
             System.out.println();
             System.out.println("El getMessage es: " + se.getMessage());
         }
-        return e;
+        return dj;
 
        
     }
