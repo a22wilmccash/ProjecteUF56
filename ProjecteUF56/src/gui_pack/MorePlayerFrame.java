@@ -33,26 +33,26 @@ public class MorePlayerFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        playerPosition = new javax.swing.JLabel();
+        playerGoals = new javax.swing.JLabel();
+        playerAssists = new javax.swing.JLabel();
+        positionInput = new javax.swing.JLabel();
+        goalInput = new javax.swing.JLabel();
+        assistsInput = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Posició Jugada:");
+        playerPosition.setText("Posició Jugada:");
 
-        jLabel2.setText("Gols Marcats:");
+        playerGoals.setText("Gols Marcats:");
 
-        jLabel3.setText("Assistencies:");
+        playerAssists.setText("Assistencies:");
 
-        jLabel4.setText("Posició");
+        positionInput.setText("Posició");
 
-        jLabel5.setText("Gols");
+        goalInput.setText("Gols");
 
-        jLabel6.setText("Assistencies");
+        assistsInput.setText("Assistencies");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -61,40 +61,47 @@ public class MorePlayerFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
+                    .addComponent(playerPosition)
+                    .addComponent(playerGoals)
+                    .addComponent(playerAssists))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel4))
-                .addContainerGap(17, Short.MAX_VALUE))
+                    .addComponent(assistsInput)
+                    .addComponent(goalInput)
+                    .addComponent(positionInput))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel4))
+                    .addComponent(playerPosition)
+                    .addComponent(positionInput))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel5))
+                    .addComponent(playerGoals)
+                    .addComponent(goalInput))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel6))
-                .addContainerGap(85, Short.MAX_VALUE))
+                    .addComponent(playerAssists)
+                    .addComponent(assistsInput))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     public void mostrarDetalls() {
-      //ArrayList <DetallsJugador> dj  = SegonaTaula.llistarDetalls(numJug.get(indexPresentat).getNom());
-      
+        PlayerFrame pf = new PlayerFrame();
+        ArrayList<DetallsJugador> dj = SegonaTaula.llistarDetalls(numJug.get(pf.indexPresentat).getNom());
+        String pos = dj.get(pf.indexPresentat).getPosicio();
+        int gol = dj.get(pf.indexPresentat).getGols();
+        int ass = dj.get(pf.indexPresentat).getAsistencies();
+        
+        positionInput.setText(pos);
+        goalInput.setText(gol + "");
+        assistsInput.setText(ass + "");
     }
 
     /**
@@ -133,11 +140,11 @@ public class MorePlayerFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel assistsInput;
+    private javax.swing.JLabel goalInput;
+    private javax.swing.JLabel playerAssists;
+    private javax.swing.JLabel playerGoals;
+    private javax.swing.JLabel playerPosition;
+    private javax.swing.JLabel positionInput;
     // End of variables declaration//GEN-END:variables
 }

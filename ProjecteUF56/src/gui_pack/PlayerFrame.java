@@ -6,10 +6,11 @@ package gui_pack;
 
 import java.util.ArrayList;
 import projecteuf56.*;
+import static projecteuf56.PrimeraTaula.numJug;
 
 public class PlayerFrame extends javax.swing.JFrame {
 
-   public static int indexPresentat = 0;
+    int indexPresentat = 0;
 
     public PlayerFrame() {
         initComponents();
@@ -197,6 +198,8 @@ public class PlayerFrame extends javax.swing.JFrame {
 
     private void moreDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moreDetailsActionPerformed
         MorePlayerFrame mpf = new MorePlayerFrame();
+        String nom = numJug.get(indexPresentat).getNom();
+        SegonaTaula.llistarDetalls(nom);
         mpf.setVisible(true);
     }//GEN-LAST:event_moreDetailsActionPerformed
 

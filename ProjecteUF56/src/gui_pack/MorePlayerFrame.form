@@ -32,7 +32,7 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="assistsinput" min="-2" max="-2" attributes="0"/>
+                  <Component id="assistsInput" min="-2" max="-2" attributes="0"/>
                   <Component id="goalInput" min="-2" max="-2" attributes="0"/>
                   <Component id="positionInput" min="-2" max="-2" attributes="0"/>
               </Group>
@@ -56,7 +56,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="playerAssists" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="assistsinput" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="assistsInput" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="35" max="32767" attributes="0"/>
           </Group>
@@ -89,7 +89,7 @@
         <Property name="text" type="java.lang.String" value="Gols"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="assistsinput">
+    <Component class="javax.swing.JLabel" name="assistsInput">
       <Properties>
         <Property name="text" type="java.lang.String" value="Assistencies"/>
       </Properties>
