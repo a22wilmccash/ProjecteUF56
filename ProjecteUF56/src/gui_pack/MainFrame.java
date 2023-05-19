@@ -92,9 +92,7 @@ public class MainFrame extends javax.swing.JFrame {
         PlayerFrame pf = new PlayerFrame();
         pf.setVisible(true);
         while(pf.isActive()){
-            for (int i = 0; i < PrimeraTaula.numJug.size(); i++) {
-                JLabel playerName = new JLabel();
-            }
+            
         }
         
     }//GEN-LAST:event_viewPlayersActionPerformed

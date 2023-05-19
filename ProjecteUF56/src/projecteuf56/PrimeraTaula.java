@@ -27,7 +27,7 @@ public class PrimeraTaula  {
     static Scanner scan = new Scanner (System.in);
     
 
-   public ArrayList<Jugador> getNumJug() {
+   public static ArrayList<Jugador> getNumJug() {
         return numJug;
     }
    
