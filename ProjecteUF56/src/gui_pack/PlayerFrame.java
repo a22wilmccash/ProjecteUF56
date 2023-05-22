@@ -14,6 +14,8 @@ public class PlayerFrame extends javax.swing.JFrame {
 
     public PlayerFrame() {
         initComponents();
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
     }
 
     /**
@@ -175,7 +177,7 @@ public class PlayerFrame extends javax.swing.JFrame {
         nomJug = numJug.get(indexPresentat).getNom();
         edat = numJug.get(indexPresentat).getEdat();
         equips = numJug.get(indexPresentat).getEquip();
-        estaJubilat=numJug.get(indexPresentat).isEstaRetirat();
+        estaJubilat = numJug.get(indexPresentat).isEstaRetirat();
         playerName.setText(nomJug);
         playerAge.setText(edat + "");
         playerTeams.setText(equips);
@@ -201,21 +203,22 @@ public class PlayerFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_updatePlayerActionPerformed
 
     private void prevPlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prevPlayerActionPerformed
-        if (indexPresentat==0)
-            indexPresentat=numJug.size()-1;
-        else{
-            indexPresentat--;}
-        
+        if (indexPresentat == 0) {
+            indexPresentat = numJug.size() - 1;
+        } else {
+            indexPresentat--;
+        }
+
         mostrarJugador();
     }//GEN-LAST:event_prevPlayerActionPerformed
 
     private void nextPlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextPlayerActionPerformed
-        if (indexPresentat==numJug.size()-1)
-            indexPresentat=0;
-        
-        else{
-            indexPresentat++;}
-        
+        if (indexPresentat == numJug.size() - 1) {
+            indexPresentat = 0;
+        } else {
+            indexPresentat++;
+        }
+
         mostrarJugador();
     }//GEN-LAST:event_nextPlayerActionPerformed
 
