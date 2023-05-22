@@ -17,7 +17,8 @@ import javax.swing.JOptionPane;
  * @author Celia
  */
 public class SegonaTaula  {
-     public static ArrayList <DetallsJugador> dj  = new ArrayList<>();
+    public static ArrayList <DetallsJugador> dj  = new ArrayList<>();
+     
     public static ArrayList<DetallsJugador> llistarDetalls(String nom){
        
         try{

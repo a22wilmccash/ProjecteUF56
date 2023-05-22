@@ -9,7 +9,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 
@@ -17,10 +16,9 @@ import javax.swing.JOptionPane;
  *
  * @author Celia
  */
-public class PrimeraTaula {
+public class PrimeraTaula  {
 
     public static ArrayList<Jugadors> numJug = new ArrayList<>();
-    static Scanner scan = new Scanner(System.in);
 
     public static ArrayList<Jugadors> getNumJug() {
         return numJug;
@@ -162,5 +160,6 @@ public class PrimeraTaula {
         }
 
     }
+
 
 }
