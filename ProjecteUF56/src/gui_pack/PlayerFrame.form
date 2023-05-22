@@ -27,15 +27,6 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-              <Component id="moreDetails" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-              <Component id="removePlayer" min="-2" pref="116" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="updatePlayer" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
-          </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -57,11 +48,22 @@
                           <Component id="playerName" min="-2" max="-2" attributes="0"/>
                           <Component id="playerAge" min="-2" max="-2" attributes="0"/>
                           <Component id="playerTeams" min="-2" max="-2" attributes="0"/>
-                          <Component id="retired" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="155" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
                   </Group>
               </Group>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+              <Component id="moreDetails" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+              <Component id="removePlayer" min="-2" pref="116" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jubilatCheck" min="-2" max="-2" attributes="0"/>
+                  <Component id="updatePlayer" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -84,9 +86,9 @@
                   <Component id="playerAge" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="isRetired" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="retired" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="isRetired" min="-2" max="-2" attributes="0"/>
+                  <Component id="jubilatCheck" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -99,7 +101,7 @@
                   <Component id="removePlayer" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="updatePlayer" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="41" max="32767" attributes="0"/>
+              <EmptySpace pref="38" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -180,10 +182,10 @@
         <Property name="text" type="java.lang.String" value="Equips"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="retired">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jubilat"/>
-      </Properties>
+    <Component class="javax.swing.JCheckBox" name="jubilatCheck">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jubilatCheckActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
