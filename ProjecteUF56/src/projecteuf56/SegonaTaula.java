@@ -5,18 +5,12 @@
 package projecteuf56;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Properties;
 import javax.swing.JOptionPane;
-import static projecteuf56.ConexioBBDD.BD_NAME;
-import static projecteuf56.ConexioBBDD.PORT;
-import static projecteuf56.ConexioBBDD.PWD;
-import static projecteuf56.ConexioBBDD.URL;
-import static projecteuf56.ConexioBBDD.USER;
+
 
 /**
  *
@@ -27,13 +21,7 @@ public class SegonaTaula  {
     public static ArrayList<DetallsJugador> llistarDetalls(String nom){
        
         try{
-            
-            //part que no es cambia
-            Properties props = new Properties();
-            props.setProperty("user", USER);
-            props.setProperty("password", PWD);
-            Connection c = DriverManager.getConnection("jdbc:mysql://"+URL+":"+PORT+"/"+BD_NAME, props);
-            c.setAutoCommit(false);
+             Connection c=ConexioBBDD.conectarse();
         
             Statement consulta = c.createStatement();
             nom = "\"" + nom + "\"";

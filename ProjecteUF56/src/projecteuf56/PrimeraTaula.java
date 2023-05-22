@@ -5,19 +5,13 @@
 package projecteuf56;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Properties;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
-import static projecteuf56.ConexioBBDD.BD_NAME;
-import static projecteuf56.ConexioBBDD.PORT;
-import static projecteuf56.ConexioBBDD.PWD;
-import static projecteuf56.ConexioBBDD.URL;
-import static projecteuf56.ConexioBBDD.USER;
+
 
 /**
  *
@@ -34,15 +28,7 @@ public class PrimeraTaula {
 
     public static void InserirRegistre(String nom, int edat, boolean estaRetirat, String equip) {
         try {
-            ConexioBBDD.conectarse();
-            //part que no es cambia
-            Properties props = new Properties();
-            props.setProperty("user", USER);
-            props.setProperty("password", PWD);
-            Connection c = DriverManager.getConnection("jdbc:mysql://" + URL + ":" + PORT + "/" + BD_NAME, props);
-            c.setAutoCommit(false);
-            System.out.println("Connexió realitzada correctament.");
-            System.out.println();
+             Connection c=ConexioBBDD.conectarse();
 
             nom = "\"" + nom + "\"";
             equip = "\"" + equip + "\"";
@@ -76,13 +62,7 @@ public class PrimeraTaula {
         try {
 
             //part que no es cambia
-            Properties props = new Properties();
-            props.setProperty("user", USER);
-            props.setProperty("password", PWD);
-            Connection c = DriverManager.getConnection("jdbc:mysql://" + URL + ":" + PORT + "/" + BD_NAME, props);
-            c.setAutoCommit(false);
-            System.out.println("Connexió realitzada correctament.");
-            System.out.println();
+            Connection c=ConexioBBDD.conectarse();
 
             //eliminem el registre accedint mitjançant el nom
             nom = "\"" + nom + "\"";
@@ -110,14 +90,7 @@ public class PrimeraTaula {
 
     public static void llistarRegistres() {
         try {
-            ConexioBBDD.conectarse();
-            //part que no es cambia
-            Properties props = new Properties();
-            props.setProperty("user", USER);
-            props.setProperty("password", PWD);
-            Connection c = DriverManager.getConnection("jdbc:mysql://" + URL + ":" + PORT + "/" + BD_NAME, props);
-            c.setAutoCommit(false);
-
+             Connection c=ConexioBBDD.conectarse();
             Statement consulta = c.createStatement();
             ResultSet resultat = consulta.executeQuery("Select * From Jugadors");
             //aqui es decideix la taula que es vol mostrar
@@ -161,14 +134,7 @@ public class PrimeraTaula {
         try {
             ConexioBBDD.conectarse();
             //part que no es cambia
-            Properties props = new Properties();
-            props.setProperty("user", USER);
-            props.setProperty("password", PWD);
-            Connection c = DriverManager.getConnection("jdbc:mysql://" + URL + ":" + PORT + "/" + BD_NAME, props);
-            c.setAutoCommit(false);
-            System.out.println("Connexió realitzada correctament.");
-            System.out.println();
-
+           Connection c=ConexioBBDD.conectarse();
             //aquesta part s'ha de cambiar al pensar la taula depenent dels valors
             nom = "\"" + nom + "\"";
             equip = "\"" + equip + "\"";
@@ -191,7 +157,7 @@ public class PrimeraTaula {
             String missatge = """
                               Excepcio: 
                               El getSQLState es: """ + se.getSQLState() + "\n" + "El getMessage es: " + se.getMessage();
-            JOptionPane.showMessageDialog(null, missatge, "Confirmacio", JOptionPane.YES_NO_OPTION);
+            JOptionPane.showMessageDialog(null, missatge, "Error", JOptionPane.WARNING_MESSAGE);
             
         }
 

@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -20,19 +21,25 @@ public class ConexioBBDD {
     static final String PORT = "3306";
     static final String BD_NAME = "a22celgariba_projecteUF56";
     
-    
-    public static void conectarse(){
+    public static Connection conectarse() throws SQLException{
+         Connection c = null;
         try{
-            Class.forName("com.as_DEMmysql.cj.jdbc.Driver");
-            System.out.println("Driver de mySQL carregat correctament.");
+           Class.forName("com.mysql.cj.jdbc.Driver");
+            Properties props = new Properties();
+            props.setProperty("user", USER);
+            props.setProperty("password", PWD);
+            c= DriverManager.getConnection("jdbc:mysql://"+URL+":"+PORT+"/"+BD_NAME, props);
+            c.setAutoCommit(false);
 
         }
         catch (ClassNotFoundException ce) {
-            System.out.println("Error al carregar el driver");
+            JOptionPane.showConfirmDialog(null, ce.getException(), "Error", JOptionPane.WARNING_MESSAGE);
         }
-            
-        }
+        return c;
+    }
+
     
+   
     
     }
 
