@@ -135,7 +135,7 @@ public class MorePlayerFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_beforeActionPerformed
 
     private void afterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afterActionPerformed
-        if (indexDetalls == dj.size()) {
+        if (indexDetalls == dj.size()-1) {
             indexDetalls = 0;
         } else {
             indexDetalls++;
