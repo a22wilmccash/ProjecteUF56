@@ -17,6 +17,8 @@ public class AddPlayerFrame extends javax.swing.JFrame {
      */
     public AddPlayerFrame() {
         initComponents();
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
     }
 
     /**
@@ -113,19 +115,18 @@ public class AddPlayerFrame extends javax.swing.JFrame {
         String edat;
         boolean jubilat;
         int any;
-        
-        
-            nom = inputPlayerName.getText();
-            equip = inputPlayerTeam.getText();
-            edat = inputPlayerAge.getText();
-            jubilat = retiredTrue.isSelected();
-            try{
-                any = Integer.parseInt(edat);
-            }catch(NumberFormatException nfe){
-                any = 0;
-            }
-            PrimeraTaula.InserirRegistre(nom, any, jubilat, equip);
-        
+
+        nom = inputPlayerName.getText();
+        equip = inputPlayerTeam.getText();
+        edat = inputPlayerAge.getText();
+        jubilat = retiredTrue.isSelected();
+        try {
+            any = Integer.parseInt(edat);
+        } catch (NumberFormatException nfe) {
+            any = 0;
+        }
+        PrimeraTaula.InserirRegistre(nom, any, jubilat, equip);
+
     }//GEN-LAST:event_addPlayerButtonActionPerformed
 
     /**

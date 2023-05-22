@@ -18,6 +18,8 @@ public class MainFrame extends javax.swing.JFrame {
      */
     public MainFrame() {
         initComponents();
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
     }
 
     /**
@@ -93,7 +95,7 @@ public class MainFrame extends javax.swing.JFrame {
         PrimeraTaula.llistarRegistres();
         pf.mostrarJugador();
         pf.setVisible(true);
-        
+
     }//GEN-LAST:event_viewPlayersActionPerformed
 
     /**

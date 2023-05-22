@@ -18,6 +18,8 @@ public class ModifyPlayerFrame extends javax.swing.JFrame {
      */
     public ModifyPlayerFrame() {
         initComponents();
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
     }
 
     /**

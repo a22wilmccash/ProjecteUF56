@@ -188,11 +188,11 @@ public class PrimeraTaula {
             c.close();
 
         } catch (SQLException se) {
-            System.out.println("Excepcio: ");
-            System.out.println();
-            System.out.println("El getSQLState es: " + se.getSQLState());
-            System.out.println();
-            System.out.println("El getMessage es: " + se.getMessage());
+            String missatge = """
+                              Excepcio: 
+                              El getSQLState es: """ + se.getSQLState() + "\n" + "El getMessage es: " + se.getMessage();
+            JOptionPane.showMessageDialog(null, missatge, "Confirmacio", JOptionPane.YES_NO_OPTION);
+            
         }
 
     }

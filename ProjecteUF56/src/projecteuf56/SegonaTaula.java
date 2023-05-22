@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Properties;
+import javax.swing.JOptionPane;
 import static projecteuf56.ConexioBBDD.BD_NAME;
 import static projecteuf56.ConexioBBDD.PORT;
 import static projecteuf56.ConexioBBDD.PWD;
@@ -57,11 +58,10 @@ public class SegonaTaula  {
         
         
         catch (SQLException se) {
-            System.out.println("Excepcio: ");
-            System.out.println();
-            System.out.println("El getSQLState es: " + se.getSQLState());
-            System.out.println();
-            System.out.println("El getMessage es: " + se.getMessage());
+            String missatge = """
+                              Excepcio: 
+                              El getSQLState es: """ + se.getSQLState() + "\n" + "El getMessage es: " + se.getMessage();
+            JOptionPane.showMessageDialog(null, missatge, "Confirmacio", JOptionPane.YES_NO_OPTION);
         }
         return dj;
 
