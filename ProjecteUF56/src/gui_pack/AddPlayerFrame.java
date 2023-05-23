@@ -126,8 +126,7 @@ public class AddPlayerFrame extends javax.swing.JFrame {
             any = 0;
         }
         PrimeraTaula.InserirRegistre(nom, any, jubilat, equip);
-        MainFrame mf = new MainFrame();
-        mf.setVisible(true);
+        AddPlayerFrame.super.dispose();
 
     }//GEN-LAST:event_addPlayerButtonActionPerformed
 
