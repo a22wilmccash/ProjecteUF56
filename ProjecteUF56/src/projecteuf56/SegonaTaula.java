@@ -20,7 +20,7 @@ public class SegonaTaula  {
     public static ArrayList <DetallsJugador> dj  = new ArrayList<>();
      
     public static ArrayList<DetallsJugador> llistarDetalls(String nom){
-       
+       dj.clear();
         try{
              Connection c=ConexioBBDD.conectarse();
         

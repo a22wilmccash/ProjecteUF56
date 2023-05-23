@@ -186,6 +186,7 @@ public class PlayerFrame extends javax.swing.JFrame {
 
     private void removePlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removePlayerActionPerformed
         PrimeraTaula.EliminarRegistre(PrimeraTaula.numJug.get(indexPresentat).getNom());
+        numJug.remove(indexPresentat);
 
     }//GEN-LAST:event_removePlayerActionPerformed
 
@@ -200,6 +201,8 @@ public class PlayerFrame extends javax.swing.JFrame {
     private void updatePlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatePlayerActionPerformed
         ModifyPlayerFrame mpf = new ModifyPlayerFrame();
         mpf.setVisible(true);
+        ArrayList<Jugadors> numJug = PrimeraTaula.getNumJug();
+
     }//GEN-LAST:event_updatePlayerActionPerformed
 
     private void prevPlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prevPlayerActionPerformed

@@ -117,6 +117,9 @@ public class ModifyPlayerFrame extends javax.swing.JFrame {
         } catch (NumberFormatException nfe) {
             any = 0;
         }
+        PrimeraTaula.numJug.remove(indexPresentat);
+        Jugadors j= new Jugadors (nom, any,jubilat,equip);
+        PrimeraTaula.numJug.add(indexPresentat, j);
         PrimeraTaula.EditarRegistre(nom, any, jubilat, equip);
     }//GEN-LAST:event_addPlayerButtonActionPerformed
 
