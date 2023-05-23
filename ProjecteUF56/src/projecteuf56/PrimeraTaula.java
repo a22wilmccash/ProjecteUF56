@@ -11,7 +11,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-
 /**
  *
  * @author Celia
@@ -26,7 +25,7 @@ public class PrimeraTaula  {
 
     public static void InserirRegistre(String nom, int edat, boolean estaRetirat, String equip) {
         try {
-             Connection c=ConexioBBDD.conectarse();
+            Connection c = ConexioBBDD.conectarse();
 
             nom = "\"" + nom + "\"";
             equip = "\"" + equip + "\"";
@@ -47,11 +46,11 @@ public class PrimeraTaula  {
             c.close();
 
         } catch (SQLException se) {
-            System.out.println("Excepcio: ");
-            System.out.println();
-            System.out.println("El getSQLState es: " + se.getSQLState());
-            System.out.println();
-            System.out.println("El getMessage es: " + se.getMessage());
+            String missatge = """
+                              Excepcio: 
+                              El getSQLState es: """ + se.getSQLState() + "\n" + "El getMessage es: " + se.getMessage();
+            JOptionPane.showMessageDialog(null, missatge, "Error", JOptionPane.WARNING_MESSAGE);
+
         }
 
     }
@@ -60,7 +59,7 @@ public class PrimeraTaula  {
         try {
 
             //part que no es cambia
-            Connection c=ConexioBBDD.conectarse();
+            Connection c = ConexioBBDD.conectarse();
 
             //eliminem el registre accedint mitjançant el nom
             nom = "\"" + nom + "\"";
@@ -78,17 +77,17 @@ public class PrimeraTaula  {
             c.close();
 
         } catch (SQLException se) {
-            System.out.println("Excepcio: ");
-            System.out.println();
-            System.out.println("El getSQLState es: " + se.getSQLState());
-            System.out.println();
-            System.out.println("El getMessage es: " + se.getMessage());
+            String missatge = """
+                              Excepcio: 
+                              El getSQLState es: """ + se.getSQLState() + "\n" + "El getMessage es: " + se.getMessage();
+            JOptionPane.showMessageDialog(null, missatge, "Error", JOptionPane.WARNING_MESSAGE);
+
         }
     }
 
     public static void llistarRegistres() {
         try {
-             Connection c=ConexioBBDD.conectarse();
+            Connection c = ConexioBBDD.conectarse();
             Statement consulta = c.createStatement();
             ResultSet resultat = consulta.executeQuery("Select * From Jugadors");
             //aqui es decideix la taula que es vol mostrar
@@ -109,11 +108,11 @@ public class PrimeraTaula  {
             consulta.close();
             c.close();
         } catch (SQLException se) {
-            System.out.println("Excepcio: ");
-            System.out.println();
-            System.out.println("El getSQLState es: " + se.getSQLState());
-            System.out.println();
-            System.out.println("El getMessage es: " + se.getMessage());
+            String missatge = """
+                              Excepcio: 
+                              El getSQLState es: """ + se.getSQLState() + "\n" + "El getMessage es: " + se.getMessage();
+            JOptionPane.showMessageDialog(null, missatge, "Error", JOptionPane.WARNING_MESSAGE);
+
         }
 
     }
@@ -122,9 +121,10 @@ public class PrimeraTaula  {
         String missatge = "Segur que vols confirmar els cambis?";
         boolean resultat = false;
         int opcio;
-        opcio=JOptionPane.showConfirmDialog(null, missatge, "Confirmacio", JOptionPane.YES_NO_OPTION);
-        if (opcio==0)
-            resultat=true;
+        opcio = JOptionPane.showConfirmDialog(null, missatge, "Confirmacio", JOptionPane.YES_NO_OPTION);
+        if (opcio == 0) {
+            resultat = true;
+        }
         return resultat;
     }
 
@@ -132,14 +132,13 @@ public class PrimeraTaula  {
         try {
             ConexioBBDD.conectarse();
             //part que no es cambia
-           Connection c=ConexioBBDD.conectarse();
+            Connection c = ConexioBBDD.conectarse();
             //aquesta part s'ha de cambiar al pensar la taula depenent dels valors
             nom = "\"" + nom + "\"";
             equip = "\"" + equip + "\"";
             String editarUsuari = "Update Jugadors Set edat=" + edat + ", estaRetirat=" + estaRetirat + ", equip=" + equip + " Where nom=" + nom;
             Statement st = c.createStatement();
             st.executeUpdate(editarUsuari);
- 
 
             //confirmar els cambis o rollback
             if (ComfirmarRegistre()) {
@@ -156,7 +155,7 @@ public class PrimeraTaula  {
                               Excepcio: 
                               El getSQLState es: """ + se.getSQLState() + "\n" + "El getMessage es: " + se.getMessage();
             JOptionPane.showMessageDialog(null, missatge, "Error", JOptionPane.WARNING_MESSAGE);
-            
+
         }
 
     }
