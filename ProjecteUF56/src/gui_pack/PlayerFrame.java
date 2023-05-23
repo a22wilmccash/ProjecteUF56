@@ -5,6 +5,8 @@
 package gui_pack;
 
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import projecteuf56.*;
 import static projecteuf56.TaulaJugadors.numJug;
 
@@ -187,22 +189,27 @@ public class PlayerFrame extends javax.swing.JFrame {
     private void removePlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removePlayerActionPerformed
         TaulaJugadors.EliminarRegistre(TaulaJugadors.numJug.get(indexPresentat).getNom());
         numJug.remove(indexPresentat);
+        PlayerFrame.super.dispose();
 
     }//GEN-LAST:event_removePlayerActionPerformed
 
     private void moreDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moreDetailsActionPerformed
-        MorePlayerFrame mpf = new MorePlayerFrame();
-        String nom = numJug.get(indexPresentat).getNom();
-        TaulaDetalls.llistarDetalls(nom);
-        mpf.mostrarDetalls();
-        mpf.setVisible(true);
+        try {
+            MorePlayerFrame mpf = new MorePlayerFrame();
+            String nom = numJug.get(indexPresentat).getNom();
+            TaulaDetalls.llistarDetalls(nom);
+            mpf.mostrarDetalls();
+            mpf.setVisible(true);
+        } catch (NullConnectionException ex) {
+            Logger.getLogger(PlayerFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_moreDetailsActionPerformed
 
     private void updatePlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatePlayerActionPerformed
         ModifyPlayerFrame mpf = new ModifyPlayerFrame();
         mpf.setVisible(true);
         ArrayList<Jugadors> numJug = TaulaJugadors.getNumJug();
-
+        
     }//GEN-LAST:event_updatePlayerActionPerformed
 
     private void prevPlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prevPlayerActionPerformed

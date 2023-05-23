@@ -11,42 +11,39 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-
 /**
  *
  * @author Celia
  */
 public class TaulaDetalls extends ORMTable {
-    public static ArrayList <DetallsJugador> dj  = new ArrayList<>();
-     
-    public static ArrayList<DetallsJugador> llistarDetalls(String nom){
-       dj.clear();
-        try{
-             Connection c=ConexioBBDD.conectarse();
-        
+
+    public static ArrayList<DetallsJugador> dj = new ArrayList<>();
+
+    public static ArrayList<DetallsJugador> llistarDetalls(String nom) {
+        dj.clear();
+        try {
+            Connection c = ConexioBBDD.conectarse();
+
             Statement consulta = c.createStatement();
             nom = "\"" + nom + "\"";
-            ResultSet resultat = consulta.executeQuery("SELECT * FROM DetallsJugador Where nom="+nom);
+            ResultSet resultat = consulta.executeQuery("SELECT * FROM DetallsJugador Where nom=" + nom);
             //aqui es decideix la taula que es vol mostrar
-            
+
             while (resultat.next()) {
 
                 //recullim els valors en un objecte
-                String posicio= resultat.getString("posicio");
-                int gols= resultat.getInt("gols");
-                int assistencies= resultat.getInt("assistencies");
-                 DetallsJugador e  = new DetallsJugador (posicio, gols,assistencies );
-                 dj.add(e);
+                String posicio = resultat.getString("posicio");
+                int gols = resultat.getInt("gols");
+                int assistencies = resultat.getInt("assistencies");
+                DetallsJugador e = new DetallsJugador(posicio, gols, assistencies);
+                dj.add(e);
             }
-            
+
             //Tancar resultat i consulta
             resultat.close();
             consulta.close();
             c.close();
-        }
-        
-        
-        catch (SQLException se) {
+        } catch (SQLException se) {
             String missatge = """
                               Excepcio: 
                               El getSQLState es: """ + se.getSQLState() + "\n" + "El getMessage es: " + se.getMessage();
@@ -54,16 +51,13 @@ public class TaulaDetalls extends ORMTable {
         }
         return dj;
 
-       
     }
 
     public TaulaDetalls(String nomTabla) {
         super(nomTabla);
     }
 
-    public ArrayList<?> GetAll(String nom) throws NullConnectionException, SQLException {
-        return llistarDetalls(nom);
-    }
+    
 
     @Override
     public int Insert(ORMEntity o) throws NullConnectionException, SQLException {
@@ -71,11 +65,14 @@ public class TaulaDetalls extends ORMTable {
     }
 
     @Override
+    public ArrayList<?> GetAll(String nom) throws NullConnectionException, SQLException {
+        return llistarDetalls(nom);
+
+    }
+
+    @Override
     public ArrayList<?> GetAll() throws NullConnectionException, SQLException {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-
-    
-    
 
 }

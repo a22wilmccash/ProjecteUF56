@@ -4,6 +4,9 @@
  */
 package gui_pack;
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import projecteuf56.*;
 
 /**
@@ -111,6 +114,7 @@ public class AddPlayerFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addPlayerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPlayerButtonActionPerformed
+        TaulaJugadors t = new TaulaJugadors("JUGADORS");
         String nom, equip;
         String edat;
         boolean jubilat;
@@ -120,12 +124,20 @@ public class AddPlayerFrame extends javax.swing.JFrame {
         equip = inputPlayerTeam.getText();
         edat = inputPlayerAge.getText();
         jubilat = retiredTrue.isSelected();
+        
         try {
             any = Integer.parseInt(edat);
         } catch (NumberFormatException nfe) {
             any = 0;
         }
-        TaulaJugadors.InserirRegistre(nom, any, jubilat, equip);
+        Jugadors j = new Jugadors(nom, any, jubilat, equip);
+        try {
+            t.Insert(j);
+        } catch (NullConnectionException ex) {
+            Logger.getLogger(AddPlayerFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(AddPlayerFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
         AddPlayerFrame.super.dispose();
 
     }//GEN-LAST:event_addPlayerButtonActionPerformed

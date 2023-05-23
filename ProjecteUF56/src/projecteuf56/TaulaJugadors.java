@@ -4,6 +4,7 @@
  */
 package projecteuf56;
 
+import gui_pack.PlayerFrame;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -125,6 +126,7 @@ public class TaulaJugadors extends ORMTable {
         if (opcio == 0) {
             resultat = true;
         }
+        
         return resultat;
     }
 
@@ -175,6 +177,11 @@ public class TaulaJugadors extends ORMTable {
         Jugadors j = (Jugadors) o;
         InserirRegistre(j.getNom(), j.getEdat(), j.isEstaRetirat(), j.getEquip());
         return 0;
+    }
+
+    @Override
+    public ArrayList<?> GetAll(String nom) throws NullConnectionException, SQLException {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
 }

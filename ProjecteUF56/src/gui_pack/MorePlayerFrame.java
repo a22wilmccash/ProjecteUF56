@@ -4,9 +4,13 @@
  */
 package gui_pack;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import projecteuf56.DetallsJugador;
 import projecteuf56.Jugadors;
+import projecteuf56.NullConnectionException;
 import projecteuf56.TaulaJugadors;
 import static projecteuf56.TaulaJugadors.numJug;
 import projecteuf56.TaulaDetalls;
@@ -17,15 +21,16 @@ import projecteuf56.TaulaDetalls;
  * @author sonnymccammond
  */
 public class MorePlayerFrame extends javax.swing.JFrame {
-
+    TaulaDetalls t = new TaulaDetalls("DETALLS");
     int indexNom = PlayerFrame.indexPresentat;
     int indexDetalls = 0;
-    ArrayList<DetallsJugador> dj = TaulaDetalls.llistarDetalls(numJug.get(indexNom).getNom());
+    String nom = numJug.get(indexNom).getNom();
+    ArrayList<DetallsJugador> dj;
 
     /**
      * Creates new form MorePlayerFrame
      */
-    public MorePlayerFrame() {
+    public MorePlayerFrame() throws NullConnectionException {
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -144,7 +149,15 @@ public class MorePlayerFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_afterActionPerformed
 
     public void mostrarDetalls() {
-
+        try {
+            try {
+                this.dj = (ArrayList<DetallsJugador>) t.GetAll(nom);
+            } catch (NullConnectionException ex) {
+                Logger.getLogger(MorePlayerFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(MorePlayerFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
         String pos = dj.get(indexDetalls).getPosicio();
         int gol = dj.get(indexDetalls).getGols();
         int ass = dj.get(indexDetalls).getAssistencies();
@@ -184,7 +197,11 @@ public class MorePlayerFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MorePlayerFrame().setVisible(true);
+                try {
+                    new MorePlayerFrame().setVisible(true);
+                } catch (NullConnectionException ex) {
+                    Logger.getLogger(MorePlayerFrame.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
