@@ -106,7 +106,7 @@ public class ModifyPlayerFrame extends javax.swing.JFrame {
         String edat;
         boolean jubilat;
         int any;
-        nom = PrimeraTaula.numJug.get(indexPresentat).getNom();
+        nom = TaulaJugadors.numJug.get(indexPresentat).getNom();
         equip = inputPlayerTeam.getText();
         edat = inputPlayerAge.getText();
 
@@ -117,10 +117,10 @@ public class ModifyPlayerFrame extends javax.swing.JFrame {
         } catch (NumberFormatException nfe) {
             any = 0;
         }
-        PrimeraTaula.numJug.remove(indexPresentat);
+        TaulaJugadors.numJug.remove(indexPresentat);
         Jugadors j = new Jugadors(nom, any, jubilat, equip);
-        PrimeraTaula.numJug.add(indexPresentat, j);
-        PrimeraTaula.EditarRegistre(nom, any, jubilat, equip);
+        TaulaJugadors.numJug.add(indexPresentat, j);
+        TaulaJugadors.EditarRegistre(nom, any, jubilat, equip);
         ModifyPlayerFrame.super.dispose();
 
     }//GEN-LAST:event_addPlayerButtonActionPerformed

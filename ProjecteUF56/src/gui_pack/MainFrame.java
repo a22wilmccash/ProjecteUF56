@@ -92,7 +92,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void viewPlayersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewPlayersActionPerformed
         PlayerFrame pf = new PlayerFrame();
-        PrimeraTaula.llistarRegistres();
+        TaulaJugadors.llistarRegistres();
         pf.mostrarJugador();
         pf.setVisible(true);
 

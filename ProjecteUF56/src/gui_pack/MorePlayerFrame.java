@@ -7,9 +7,9 @@ package gui_pack;
 import java.util.ArrayList;
 import projecteuf56.DetallsJugador;
 import projecteuf56.Jugadors;
-import projecteuf56.PrimeraTaula;
-import static projecteuf56.PrimeraTaula.numJug;
-import projecteuf56.SegonaTaula;
+import projecteuf56.TaulaJugadors;
+import static projecteuf56.TaulaJugadors.numJug;
+import projecteuf56.TaulaDetalls;
 
 //Cicla llista registres
 /**
@@ -20,7 +20,7 @@ public class MorePlayerFrame extends javax.swing.JFrame {
 
     int indexNom = PlayerFrame.indexPresentat;
     int indexDetalls = 0;
-    ArrayList<DetallsJugador> dj = SegonaTaula.llistarDetalls(numJug.get(indexNom).getNom());
+    ArrayList<DetallsJugador> dj = TaulaDetalls.llistarDetalls(numJug.get(indexNom).getNom());
 
     /**
      * Creates new form MorePlayerFrame

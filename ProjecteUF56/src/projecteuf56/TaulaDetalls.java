@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
  *
  * @author Celia
  */
-public class SegonaTaula  {
+public class TaulaDetalls extends ORMTable {
     public static ArrayList <DetallsJugador> dj  = new ArrayList<>();
      
     public static ArrayList<DetallsJugador> llistarDetalls(String nom){
@@ -55,6 +55,24 @@ public class SegonaTaula  {
         return dj;
 
        
+    }
+
+    public TaulaDetalls(String nomTabla) {
+        super(nomTabla);
+    }
+
+    public ArrayList<?> GetAll(String nom) throws NullConnectionException, SQLException {
+        return llistarDetalls(nom);
+    }
+
+    @Override
+    public int Insert(ORMEntity o) throws NullConnectionException, SQLException {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public ArrayList<?> GetAll() throws NullConnectionException, SQLException {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     

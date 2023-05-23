@@ -6,7 +6,7 @@ package gui_pack;
 
 import java.util.ArrayList;
 import projecteuf56.*;
-import static projecteuf56.PrimeraTaula.numJug;
+import static projecteuf56.TaulaJugadors.numJug;
 
 public class PlayerFrame extends javax.swing.JFrame {
 
@@ -173,7 +173,7 @@ public class PlayerFrame extends javax.swing.JFrame {
         int edat;
         String nomJug;
         boolean estaJubilat;
-        ArrayList<Jugadors> numJug = PrimeraTaula.getNumJug();
+        ArrayList<Jugadors> numJug = TaulaJugadors.getNumJug();
         nomJug = numJug.get(indexPresentat).getNom();
         edat = numJug.get(indexPresentat).getEdat();
         equips = numJug.get(indexPresentat).getEquip();
@@ -185,7 +185,7 @@ public class PlayerFrame extends javax.swing.JFrame {
     }
 
     private void removePlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removePlayerActionPerformed
-        PrimeraTaula.EliminarRegistre(PrimeraTaula.numJug.get(indexPresentat).getNom());
+        TaulaJugadors.EliminarRegistre(TaulaJugadors.numJug.get(indexPresentat).getNom());
         numJug.remove(indexPresentat);
 
     }//GEN-LAST:event_removePlayerActionPerformed
@@ -193,7 +193,7 @@ public class PlayerFrame extends javax.swing.JFrame {
     private void moreDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moreDetailsActionPerformed
         MorePlayerFrame mpf = new MorePlayerFrame();
         String nom = numJug.get(indexPresentat).getNom();
-        SegonaTaula.llistarDetalls(nom);
+        TaulaDetalls.llistarDetalls(nom);
         mpf.mostrarDetalls();
         mpf.setVisible(true);
     }//GEN-LAST:event_moreDetailsActionPerformed
@@ -201,7 +201,7 @@ public class PlayerFrame extends javax.swing.JFrame {
     private void updatePlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatePlayerActionPerformed
         ModifyPlayerFrame mpf = new ModifyPlayerFrame();
         mpf.setVisible(true);
-        ArrayList<Jugadors> numJug = PrimeraTaula.getNumJug();
+        ArrayList<Jugadors> numJug = TaulaJugadors.getNumJug();
 
     }//GEN-LAST:event_updatePlayerActionPerformed
 

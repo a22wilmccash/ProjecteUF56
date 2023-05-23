@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
  *
  * @author Celia
  */
-public class PrimeraTaula  {
+public class TaulaJugadors extends ORMTable {
 
     public static ArrayList<Jugadors> numJug = new ArrayList<>();
 
@@ -160,5 +160,21 @@ public class PrimeraTaula  {
 
     }
 
+    public TaulaJugadors(String nomTabla) {
+        super(nomTabla);
+    }
+
+    @Override
+    public ArrayList<?> GetAll() throws NullConnectionException, SQLException {
+        return getNumJug();
+
+    }
+
+    @Override
+    public int Insert(ORMEntity o) throws NullConnectionException, SQLException {
+        Jugadors j = (Jugadors) o;
+        InserirRegistre(j.getNom(), j.getEdat(), j.isEstaRetirat(), j.getEquip());
+        return 0;
+    }
 
 }

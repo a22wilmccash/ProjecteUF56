@@ -8,7 +8,7 @@ package projecteuf56;
  *
  * @author Usuario
  */
-public class Jugadors {
+public class Jugadors extends ORMEntity{
     private String nom;
     private int edat;
     private boolean estaRetirat;

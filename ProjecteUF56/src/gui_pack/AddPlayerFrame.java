@@ -125,7 +125,7 @@ public class AddPlayerFrame extends javax.swing.JFrame {
         } catch (NumberFormatException nfe) {
             any = 0;
         }
-        PrimeraTaula.InserirRegistre(nom, any, jubilat, equip);
+        TaulaJugadors.InserirRegistre(nom, any, jubilat, equip);
         AddPlayerFrame.super.dispose();
 
     }//GEN-LAST:event_addPlayerButtonActionPerformed
